@@ -17,3 +17,7 @@ CSV.foreach('seed_csvs/markets.csv', :headers => false) do |market|
 
   Market.create(id: market[0].to_i, name: market[1], address: market[2], city: market[3], county: market[4], state: market[5], zip: zip)
 end
+
+CSV.foreach('seed_csvs/vendors.csv', :headers => false) do |vendor|
+  Vendor.create(id: vendor[0].to_i, name: vendor[1], num_of_employees: vendor[2].to_i, market_id: vendor[3].to_i)
+end
