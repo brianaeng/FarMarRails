@@ -3,6 +3,12 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
+# Use Awesome Print for better printing
+gem 'awesome_print', require: 'ap'
+# Use Better Errors for erro handling
+gem 'better_errors'
+# Use Quiet Assets for server log handling
+gem 'quiet_assets', group: :development
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -44,4 +50,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
