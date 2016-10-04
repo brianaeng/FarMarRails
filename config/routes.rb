@@ -1,59 +1,7 @@
 Rails.application.routes.draw do
-  get 'sale/index'
+  root to: 'pages#home'
 
-  get 'sale/show'
-
-  get 'sale/new'
-
-  get 'sale/create'
-
-  get 'sale/edit'
-
-  get 'sale/update'
-
-  get 'sale/destroy'
-
-  get 'product/index'
-
-  get 'product/show'
-
-  get 'product/new'
-
-  get 'product/create'
-
-  get 'product/edit'
-
-  get 'product/update'
-
-  get 'product/destroy'
-
-  get 'vendor/index'
-
-  get 'vendor/show'
-
-  get 'vendor/new'
-
-  get 'vendor/create'
-
-  get 'vendor/edit'
-
-  get 'vendor/update'
-
-  get 'vendor/destroy'
-
-  get 'market/index'
-
-  get 'market/show'
-
-  get 'market/new'
-
-  get 'market/create'
-
-  get 'market/edit'
-
-  get 'market/update'
-
-  get 'market/destroy'
+  resources :markets, :vendors, :products, :sales
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
