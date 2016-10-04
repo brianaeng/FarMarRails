@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'csv'
+
+CSV.foreach('seed_csvs/markets.csv', :headers => false) do |market|
+  zip = market[6]
+  if zip.nil?
+  elsif zip.length == 4
+    zip = "0#{zip}"
+  end
+
+  Market.create(id: market[0].to_i, name: market[1], address: market[2], city: market[3], county: market[4], state: market[5], zip: zip)
+end
