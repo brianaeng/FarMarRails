@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #d8d8d8;
+}
+
+nav {
+  background-color: #FFF;
+  border-bottom: solid #d8d8d8 1px;
+  height: 5vw;
+  position: fixed;
+  width: 100vw;
+}
+
+nav p {
+  display: inline-block;
+  margin: 2vw;
+  text-transform: uppercase;
+  width: 20vw;
+}
+
+nav ul {
+  text-align: right;
+  display: inline-block;
+  margin: 2vw;
+  width: 71.5vw;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 0 0 2vw;
+  text-transform: uppercase;
+}
