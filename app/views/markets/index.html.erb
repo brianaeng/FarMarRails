@@ -2,7 +2,7 @@
 <article>
   <ul>
     <% @markets.each do |market| %>
-      <li><%= market.name %></li>
+      <li><%= link_to market.name, {controller: 'markets', action: 'show', id: market.id}, method: :get %></li>
       <li><%= market.address %></li>
       <li><%= market.city %></li>
       <li><%= market.county %></li>
