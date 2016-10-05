@@ -2,7 +2,7 @@
 <article>
   <ul>
     <% @vendors.each do |vendor| %>
-      <li><%= vendor.name %></li>
+      <li><%= link_to vendor.name, {controller: 'vendors', action: 'show', id: vendor.id}, method: :get %></li>
       <li><%= vendor.description %></li>
       <li><%= vendor.num_of_employees %></li>
       <li><%= vendor.market_id %></li>
