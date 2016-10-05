@@ -2,6 +2,7 @@
 <article>
   <ul>
     <% @products.each do |product| %>
+      <h4><%= product.id %></h4>
       <li><%= product.name %></li>
       <li><%= product.vendor_id %></li>
     <% end %>
