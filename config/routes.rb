@@ -1,4 +1,60 @@
 Rails.application.routes.draw do
+  get 'vendors/index'
+
+  get 'vendors/show'
+
+  get 'vendors/new'
+
+  get 'vendors/create'
+
+  get 'vendors/edit'
+
+  get 'vendors/update'
+
+  get 'vendors/destroy'
+
+  get 'sales/index'
+
+  get 'sales/show'
+
+  get 'sales/new'
+
+  get 'sales/create'
+
+  get 'sales/edit'
+
+  get 'sales/update'
+
+  get 'sales/destroy'
+
+  get 'products/index'
+
+  get 'products/show'
+
+  get 'products/new'
+
+  get 'products/create'
+
+  get 'products/edit'
+
+  get 'products/update'
+
+  get 'products/destroy'
+
+  get 'markets/index'
+
+  get 'markets/show'
+
+  get 'markets/new'
+
+  get 'markets/create'
+
+  get 'markets/edit'
+
+  get 'markets/update'
+
+  get 'markets/destroy'
+
   root to: 'pages#home'
 
   get 'pages/home', to: 'pages#home', as: 'home'

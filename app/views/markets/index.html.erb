@@ -1,0 +1,23 @@
+<h1>Market#index</h1>
+  <ul>
+    <% @markets.each do |market| %>
+    <li>
+      <%= market.name %>
+    </li>
+    <li>
+      <%= market.address %>
+    </li>
+    <li>
+      <%= market.city %>
+    </li>
+    <li>
+      <%= market.county %>
+    </li>
+    <li>
+      <%= market.state %>
+    </li>
+    <li>
+      <%= market.zip %>
+    </li>
+    <% end %>
+  </ul>
