@@ -50,5 +50,7 @@ private
   def find
     @market = Market.find(params[:id].to_i)
     #self.class.find(params[:id].to_i)
+    #entity.find(params[:id].to_i)?
+    #controller.find(params[:id].to_i)?
   end
 end
