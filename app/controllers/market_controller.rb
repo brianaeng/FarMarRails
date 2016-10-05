@@ -13,7 +13,7 @@ class MarketController < ApplicationController
 
   def create
     @market = Market.new
-    #do name, address, etc. need to be strings?
+    #find way to only take params as argument?
     @market.name = params[:market][:name]
     @market.address = params[:market][:address]
     @market.city = params[:market][:city]
@@ -38,6 +38,7 @@ class MarketController < ApplicationController
     @market.county = params[:market][:county]
     @market.state = params[:market][:state]
     @market.zip = params[:market][:zip]
+
     @market.save
   end
 
@@ -46,7 +47,7 @@ class MarketController < ApplicationController
     @market.destroy
   end
 
-private
+  private
   def find
     @market = Market.find(params[:id].to_i)
     #self.class.find(params[:id].to_i)
