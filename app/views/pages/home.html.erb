@@ -1,2 +1,6 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= form_tag '/search', method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder: 'Search for Markets' %>
+  <%= submit_tag "search", class: "submit" %>
+<% end %>
+
+<img src="assets/food-board.jpg" alt="Salmon meal on wooden platter" class="banner-image"/>

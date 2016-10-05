@@ -13,3 +13,110 @@
  *= require_tree .
  *= require_self
  */
+
+/*font-family: 'Playfair Display', serif;
+font-family: 'Lato', sans-serif;
+font-family: 'News Cycle', sans-serif;*/
+
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #333333;
+}
+
+nav {
+  background-color: #FFF;
+  border: transparent;
+  border-bottom: solid #d8d8d8 1px;
+  height: 5vw;
+  opacity: .8;
+  position: fixed;
+  width: 100vw;
+}
+
+nav p {
+  display: inline-block;
+  height: 1.6vw;
+  font: normal normal 1.6vw/1 'Playfair Display', sans-serif;
+  letter-spacing: .15em;
+  margin: 0 2vw;
+  padding: 1.7vw 0;
+  position: relative;
+  text-transform: uppercase;
+  width: 18.5vw;
+}
+
+nav ul {
+  float: right;
+  /*height: 5vw;*/
+  text-align: right;
+  width: 77vw;
+  /*margin: 2vw 0;*/
+}
+
+nav ul li {
+  display: inline-block;
+  height: 1vw;
+  text-align: center;
+  padding: 2vw 0;
+  /*width: 10vw;*/
+}
+
+nav ul li a:hover {
+  background-color: #000;
+  color: #FFF;
+}
+
+nav ul li a {
+  border: transparent;
+  border-left: solid #d8d8d8 1px;
+  font: normal 300 1vw/1 'Lato', sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 2vw 3.5vw;
+  width: 10vw;
+}
+
+img.banner-image {
+  width: 100vw;
+}
+
+form {
+  background: rgba(255,255,255,0.7);
+  border: solid #d8d8d8 1px;
+  position: fixed;
+  width: 50vw;
+  height: 4.25vw;
+  margin: 45vh 25vw;
+}
+
+input {
+  display: inline-block;
+  height: 1.75vw;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  padding: 1.25vw;
+  width: 38vw;
+}
+
+input.submit {
+  float: right;
+  text-align: center;
+  width: 7vw;
+  background-color: #e3685c;
+  color: white;
+  opacity: 1;
+  border-radius: .4vw;
+  padding: .5vw;
+  height: 3.25vw;
+  margin: .5vw;
+}
+
+::-webkit-input-placeholder {
+  color: #585858;
+  font-weight: 300;
+}
