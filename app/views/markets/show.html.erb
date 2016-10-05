@@ -1,2 +1,24 @@
 <h1>Markets#show</h1>
-<p>Find me in app/views/markets/show.html.erb</p>
+<article>
+  <ul>
+    <li><%= @market.name %></li>
+    <li><%= @market.address %></li>
+    <li><%= @market.city %></li>
+    <li><%= @market.county %></li>
+    <li><%= @market.state %></li>
+    <li><%= @market.zip %></li>
+  </ul>
+</article>
+
+<article>
+  <!-- need to someway set market_id to default with current market? -->
+  <%= button_to "Add Vendor", {controller: 'vendors', action: 'new'}, method: :get %>
+  <ul>
+    <% @market.vendors.each do |vendor| %>
+      <li>
+        <%= link_to vendor.name, {controller: 'vendors', action: 'show', id: vendor.id}, method: :get %>
+        <%= button_to "Edit", {controller: 'vendors', action: 'edit', id: vendor.id}, method: :get %>
+      </li>
+    <% end %>
+  </ul>
+</article>

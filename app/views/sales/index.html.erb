@@ -1,2 +1,12 @@
 <h1>Sales#index</h1>
-<p>Find me in app/views/sales/index.html.erb</p>
+<article>
+  <ul>
+    <% @sales.each do |sale| %>
+      <h4><%= sale.id %></h4>
+      <li><%= sale.amount %></li>
+      <li><%= sale.purchase_time %></li>
+      <li><%= sale.vendor_id %></li>
+      <li><%= sale.product_id %></li>
+    <% end %>
+  </ul>
+</article>

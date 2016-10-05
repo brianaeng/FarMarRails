@@ -1,2 +1,12 @@
 <h1>Vendors#index</h1>
-<p>Find me in app/views/vendors/index.html.erb</p>
+<article>
+  <ul>
+    <% @vendors.each do |vendor| %>
+      <h4><%= vendor.id %></h4>
+      <li><%= link_to vendor.name, {controller: 'vendors', action: 'show', id: vendor.id}, method: :get %></li>
+      <li><%= vendor.description %></li>
+      <li><%= vendor.num_of_employees %></li>
+      <li><%= vendor.market_id %></li>
+    <% end %>
+  </ul>
+</article>

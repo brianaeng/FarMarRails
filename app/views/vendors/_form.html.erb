@@ -1,0 +1,15 @@
+<%= form_for @vendor do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :num_of_employees %>
+  <%= f.number_field :num_of_employees %>
+
+  <%= f.label :market_id %>
+  <%= f.number_field :market_id %>
+
+  <%= f.submit %>
+<% end %>
