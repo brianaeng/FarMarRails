@@ -1,2 +1,25 @@
 <h1>Vendors#show</h1>
-<p>Find me in app/views/vendors/show.html.erb</p>
+<article>
+  <ul>
+    <li><%= @vendor.name %></li>
+    <li><%= @vendor.description %></li>
+    <li><%= @vendor.num_of_employees %></li>
+    <li><%= @vendor.market_id %></li>
+  </ul>
+</article>
+
+<article>
+  <!-- need to someway set vendor_id to default with current vendor? -->
+  <%= button_to "Add Product", {controller: 'products', action: 'new'}, method: :get %>
+  <ul>
+    <% @vendor.products.each do |product| %>
+      <li>
+        <%= product.name %>
+        <%= button_to "Edit", {controller: 'products', action: 'edit', id: product.id}, method: :get %>
+      </li>
+    <% end %>
+  </ul>
+</article>
+
+<!-- update sales index method to only pull sales with certain vendor id? -->
+<%= button_to "See Sales", {controller: 'sales', action: 'index'}, method: :get %>
