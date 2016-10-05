@@ -51,7 +51,6 @@ nav p {
   width: 18.5vw;
 }
 
-
 nav ul {
   float: right;
   /*height: 5vw;*/
@@ -85,4 +84,39 @@ nav ul li a {
 
 img.banner-image {
   width: 100vw;
+}
+
+form {
+  background: rgba(255,255,255,0.7);
+  border: solid #d8d8d8 1px;
+  position: fixed;
+  width: 50vw;
+  height: 4.25vw;
+  margin: 45vh 25vw;
+}
+
+input {
+  display: inline-block;
+  height: 1.75vw;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  padding: 1.25vw;
+  width: 38vw;
+}
+
+input.submit {
+  float: right;
+  text-align: center;
+  width: 7vw;
+  background-color: #e3685c;
+  color: white;
+  opacity: 1;
+  border-radius: .4vw;
+  padding: .5vw;
+  height: 3.25vw;
+  margin: .5vw;
+}
+
+::-webkit-input-placeholder {
+  color: #585858;
+  font-weight: 300;
 }

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @markets = Market.all
   end
 
   def admin
@@ -10,5 +11,5 @@ class PagesController < ApplicationController
 
   def vendor
   end
-  
+
 end
