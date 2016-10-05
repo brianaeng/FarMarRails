@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+#Gem for searching
+gem 'ransack'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 # Use Awesome Print for better printing
