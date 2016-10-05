@@ -1,0 +1,16 @@
+<%= form_for @sale do |f| %>
+  <%= f.label :amount %>
+  <%= f.number_field :amount %>
+
+  <%= f.label :purchase_time %>
+  <%= f.datetime_local_field :purchase_time %>
+
+  <%= f.label :vendor_id %>
+  <%= f.number_field :vendor_id %>
+
+  <%= f.label :product_id %>
+  <%= f.number_field :product_id %>
+
+  <%= f.submit %>
+
+<% end %>
