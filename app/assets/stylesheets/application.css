@@ -253,8 +253,12 @@ article.entity-display ul.address-block {
 h4 {
   font: normal 300 1vw/1 'Lato', sans-serif;
   letter-spacing: .15em;
-  padding: .5vw 0 3vw 0;
+  padding: .5vw 0 0 0;
   text-transform: uppercase;
+}
+
+h4 a:hover {
+  color: #dadada;
 }
 
 article.entity-display ul.address-block li:first-of-type {
