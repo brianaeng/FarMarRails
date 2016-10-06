@@ -55,6 +55,8 @@ class MarketsController < ApplicationController
   def destroy
     find
     @market.destroy
+
+    redirect_to markets_url
   end
 
   private
