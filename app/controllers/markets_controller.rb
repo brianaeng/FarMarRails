@@ -1,6 +1,12 @@
 class MarketsController < ApplicationController
+  # before_filter :set_search
+
   def index
     @markets = Market.all
+
+    @search_market = Market.search(params[:q])
+    @markets = @search_market.result
+    @search_market.build_condition
   end
 
   def show

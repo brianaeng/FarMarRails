@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
+  before_filter :set_search
+
   def home
-    @markets = Market.all
   end
 
   def admin
