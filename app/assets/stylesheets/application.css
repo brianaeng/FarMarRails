@@ -37,6 +37,7 @@ nav {
   opacity: .8;
   position: fixed;
   width: 100vw;
+  z-index: 1;
 }
 
 nav p {
@@ -93,10 +94,12 @@ div.search {
 }
 
 div.no-selector {
+  z-index: 0;
   margin: 45vh 25vw;
 }
 
 div.search-high {
+  z-index: 0;
   position: relative;
   margin: 0vw auto 5vw;
   background-color: #fafafa;
@@ -176,6 +179,14 @@ div.search input.search-button {
   width: 7vw;
 }
 
+div.search input.vendor{
+  background-color: #61964f;
+}
+
+div.search input.market {
+  background-color: #423d61;
+}
+
 ::-webkit-input-placeholder {
   color: #585858;
   font-weight: 300;
@@ -236,7 +247,7 @@ article.entity-display img.vendor {
 }
 
 article.entity-display img.market {
-  background-color: #71416a;
+  background-color: #423d61;
 }
 
 article.entity-display ul {
@@ -250,11 +261,21 @@ article.entity-display ul.address-block {
   width: 40vw;
 }
 
+article.entity-display p {
+  padding: 3vw 0 0 0;
+  font: normal 400 1vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+}
+
 h4 {
   font: normal 300 1vw/1 'Lato', sans-serif;
   letter-spacing: .15em;
-  padding: .5vw 0 3vw 0;
+  padding: .5vw 0 0 0;
   text-transform: uppercase;
+}
+
+h4 a:hover {
+  color: #dadada;
 }
 
 article.entity-display ul.address-block li:first-of-type {

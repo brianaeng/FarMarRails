@@ -1,10 +1,21 @@
-<h1>Products#index</h1>
-<article>
-  <ul>
-    <% @products.each do |product| %>
-      <h4><%= product.id %></h4>
-      <li><%= link_to product.name, {controller: 'products', action: 'show', id: product.id} %></li>
-      <li><%= product.vendor_id %></li>
+<section class="body">
+
+  <div class="search search-high">
+    <%= search_form_for @search_product do |f| %>
+      <%= f.search_field :name_cont, placeholder: "Search Products"%>
+      <%= f.submit "search", class:"search-button" %>
     <% end %>
-  </ul>
-</article
+  </div>
+
+  <article>
+    <ul>
+      <% @products.each do |product| %>
+        <h3><%= link_to product.name, {controller: 'products', action: 'show', id: product.id} %></h3>
+        <h4>sold by <%= link_to product.vendor.name, {controller: 'vendors', action: 'show', id: product.vendor.id} %></h4>
+        <h4>at <%= link_to product.vendor.market.name, {controller: 'markets', action: 'show', id: product.vendor.market.id}%></h4>
+        <div class="list-break"></div>
+      <% end %>
+    </ul>
+
+  </article>
+</section>
