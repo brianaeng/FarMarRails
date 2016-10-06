@@ -92,6 +92,10 @@ div.search {
   margin: 36vh 25vw;
 }
 
+div.no-selector {
+  margin: 45vh 25vw;
+}
+
 div.search-high {
   position: relative;
   margin: 0vw auto 5vw;
@@ -105,7 +109,7 @@ div.search form {
   border: transparent;
 }
 
-div.search input#q_name_cont {
+div.search input {
   display: inline-block;
   font: normal normal 1.5vw/1 'Lato', sans-serif;
   margin: 1.125vw;
@@ -123,10 +127,6 @@ div.search ul.search-selector li a {
   color: white;
   font: normal normal 1.5vw/1 'Lato', sans-serif;
   text-align: center;
-}
-
-div.search input.search-button {
-  padding: .5vw 2vw;
 }
 
 div.search ul.search-selector li a {
@@ -170,7 +170,10 @@ div.search input.search-button {
   float: right;
   height: 3.25vw;
   margin: .5vw;
+  text-align: center;
   opacity: 1;
+  padding: .5vw;
+  width: 7vw;
 }
 
 ::-webkit-input-placeholder {

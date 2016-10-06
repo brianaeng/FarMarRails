@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/market_search', to: 'pages#market_search', as: 'market_search'
 
+  get '/market_login', to: 'pages#market_login'
+
   get '/home', to: 'pages#home', as: 'home'
 
   get '/admin', to: 'pages#admin', as: 'admin'
