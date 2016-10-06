@@ -128,6 +128,37 @@ section.body {
   margin: 0 20vw 0 20vw;
 }
 
+div.see-all {
+  margin: 80vh 40vw;
+  position: fixed;
+  text-align: center;
+  width: 20vw;
+}
+
+div.see-all h5{
+  color: #FFF;
+  text-shadow: 2px 2px #404040;
+  font: normal 300 1.5vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+}
+
+
+div.see-all ul {
+  position: relative;
+}
+
+div.see-all ul li {
+  background-color: #FFF;
+  border-radius: 100%;
+  height: 3vw;
+  opacity: .7;
+  text-align: center;
+  width: 3vw;
+
+}
+
+
+
 h3 {
   display: inline-block;
   font: normal normal 1.75vw/1.75vw 'Josefin Sans', sans-serif;
