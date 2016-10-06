@@ -86,7 +86,7 @@ img.banner-image {
   width: 100vw;
 }
 
-form {
+div.search form {
   background: rgba(255,255,255,0.7);
   border: solid #d8d8d8 1px;
   position: fixed;
@@ -96,7 +96,7 @@ form {
   border: transparent;
 }
 
-input {
+div.search input {
   display: inline-block;
   height: 1.75vw;
   font: normal normal 1.5vw/1 'Lato', sans-serif;
@@ -104,7 +104,7 @@ input {
   width: 38vw;
 }
 
-input.submit {
+div.search input.search-button{
   float: right;
   text-align: center;
   width: 7vw;
@@ -121,4 +121,72 @@ input.submit {
 ::-webkit-input-placeholder {
   color: #585858;
   font-weight: 300;
+}
+
+section.body {
+  padding: 10vw 0 0 0;
+  margin: 0 20vw 0 20vw;
+}
+
+h3 {
+  display: inline-block;
+  font: normal normal 1.75vw/1.75vw 'Josefin Sans', sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase
+}
+
+article.entity-display img {
+  border-radius: .5vw;
+  display: inline-block;
+  height: auto;
+  width: 15vw;
+}
+
+article.entity-display img.vendor {
+  background-color: #61964f;
+}
+
+article.entity-display img.market {
+  background-color: #71416a;
+}
+
+
+article.entity-display ul {
+  vertical-align: top;
+  display: inline-block;
+  padding: 0 0 0 2vw;
+}
+
+article.entity-display ul,
+article.entity-display ul.address-block {
+  width: 40vw;
+}
+/*
+article.entity-display ul li:nth-of-type(2n) {
+  font: normal 300 1vw/3 'Lato', sans-serif;
+  text-transform: uppercase;
+}*/
+
+h4 {
+  font: normal 300 1vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+  padding: .5vw 0 3vw 0;
+  text-transform: uppercase;
+}
+
+article.entity-display ul.address-block li:first-of-type {
+  margin: 3vw 0 0 0;
+}
+
+article.entity-display ul.address-block li {
+  font: normal 300 1vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+  padding: .5vw 0 0 0;
+  text-transform: uppercase;
+}
+
+article.entity-display button {
+  background-color: red;
+  width: 10vw;
+  height: 5vw;
 }
