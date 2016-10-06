@@ -28,7 +28,7 @@ class MarketsController < ApplicationController
     @market.zip = params[:market][:zip]
     @market.save
 
-    # redirect_to root_path
+    redirect_to action: 'show', id: @market.id
   end
 
   def edit
@@ -46,6 +46,8 @@ class MarketsController < ApplicationController
     @market.zip = params[:market][:zip]
 
     @market.save
+
+    redirect_to action: 'show', id: @market.id
   end
 
   def destroy
@@ -56,8 +58,5 @@ class MarketsController < ApplicationController
   private
   def find
     @market = Market.find(params[:id].to_i)
-    #self.class.find(params[:id].to_i)
-    #entity.find(params[:id].to_i)?
-    #controller.find(params[:id].to_i)?
   end
 end

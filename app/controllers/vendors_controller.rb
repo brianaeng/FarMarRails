@@ -22,8 +22,9 @@ class VendorsController < ApplicationController
     @vendor.description = params[:vendor][:description]
     @vendor.num_of_employees = params[:vendor][:num_of_employees]
     @vendor.market_id = params[:vendor][:market_id]
-
     @vendor.save
+
+    redirect_to action: 'show', id: @vendor.id
   end
 
   def edit
@@ -39,6 +40,8 @@ class VendorsController < ApplicationController
     @vendor.market_id = params[:vendor][:market_id]
 
     @vendor.save
+
+    redirect_to action: 'show', id: @vendor.id
   end
 
   def destroy

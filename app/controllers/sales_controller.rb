@@ -15,11 +15,13 @@ class SalesController < ApplicationController
     @sale = Sale.new
 
     @sale.amount = params[:sale][:amount]
-    @sale.purchase_time = params[:sale][:purchase_time] #use date_local_time thing for getting input so it's already datetime?
+    @sale.purchase_time = params[:sale][:purchase_time] 
     @sale.vendor_id = params[:sale][:vendor_id]
     @sale.product_id = params[:sale][:product_id]
 
     @sale.save
+
+    redirect_to sales_url
   end
 
   def edit
@@ -33,8 +35,9 @@ class SalesController < ApplicationController
     @sale.purchase_time = params[:sale][:purchase_time]
     @sale.vendor_id = params[:sale][:vendor_id]
     @sale.product_id = params[:sale][:product_id]
-
     @sale.save
+
+    redirect_to sales_url
   end
 
   def destroy
