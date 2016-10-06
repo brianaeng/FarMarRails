@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  get '/vendor_search', to: 'pages#vendor_search', as: 'vendor_search'
+
+  get '/product_search', to: 'pages#product_search', as: 'product_search'
+
   get '/home', to: 'pages#home', as: 'home'
 
   get '/admin', to: 'pages#admin', as: 'admin'
