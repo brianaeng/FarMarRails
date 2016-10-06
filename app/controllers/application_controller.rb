@@ -3,11 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # def set_search
-  #   @q = Market.ransack(params[:q])
-  # end
-
   def set_search
-    @search = Market.search(params[:q])
+    @search_market = Market.search(params[:q])
+    @search_vendor = Vendor.search(params[:q])
+    @search_product = Product.search(params[:q])
   end
 end
