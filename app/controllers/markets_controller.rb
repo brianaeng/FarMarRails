@@ -11,6 +11,8 @@ class MarketsController < ApplicationController
 
   def show
     find
+
+    @vendor = Vendor.new
   end
 
   def new

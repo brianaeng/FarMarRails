@@ -56,6 +56,8 @@ class VendorsController < ApplicationController
     find
 
     @vendor.destroy
+
+    redirect_to controller: 'markets', action: 'show', id: @vendor.market.id
   end
 
   private
