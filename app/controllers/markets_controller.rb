@@ -4,9 +4,9 @@ class MarketsController < ApplicationController
   def index
     @markets = Market.all
 
-    @search = Market.search(params[:q])
-    @markets = @search.result
-    @search.build_condition
+    @search_market = Market.search(params[:q])
+    @markets = @search_market.result
+    @search_market.build_condition
   end
 
   def show
