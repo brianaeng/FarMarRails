@@ -22,6 +22,8 @@ class ProductsController < ApplicationController
     @product.vendor_id = params[:product][:vendor_id]
 
     @product.save
+
+    redirect_to controller: 'vendors', action: 'show', id: @product.vendor.id
   end
 
   def edit
@@ -35,11 +37,15 @@ class ProductsController < ApplicationController
     @product.vendor_id = params[:product][:vendor_id]
 
     @product.save
+
+    redirect_to controller: 'vendors', action: 'show', id: @product.vendor.id
   end
 
   def destroy
     find
     @product.destroy
+
+    redirect_to controller: 'vendors', action: 'show', id: @product.vendor.id
   end
 
   private

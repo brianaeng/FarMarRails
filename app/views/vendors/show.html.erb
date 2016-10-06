@@ -11,18 +11,30 @@
   </article>
 
   <article>
-    <!-- need to someway set vendor_id to default with current vendor? -->
-    <%= button_to "Add Product", {controller: 'products', action: 'new', id: @vendor.id }, method: :get %>
+    <%# button_to "Add Product", {controller: 'products', action: 'new', id: @vendor.id }, method: :get %>
     <ul>
       <% @vendor.products.each do |product| %>
         <li>
-          <%= product.name %><%= button_to "Edit", {controller: 'products', action: 'edit', id: product.id}, method: :get, class:"submit" %>
+          <%= product.name %>
+          <%= button_to "Edit", {controller: 'products', action: 'edit', id: product.id}, method: :get, class:"submit" %>
+          <%= button_to "Delete", {controller: 'products', action: 'destroy', id: product.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class:"submit" %>
         </li>
       <% end %>
     </ul>
   </article>
 
-  <!-- update sales index method to only pull sales with certain vendor id? -->
-  <%= button_to "See Sales", {controller: 'sales', action: 'index'}, method: :get %>
+<article>
+  <%= form_for @product, url: {controller: 'products', action: 'create'}, method: :post do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :vendor_id %>
+    <%= f.number_field :vendor_id, value: @vendor.id %>
+
+    <%= f.submit %>
+  <% end %>
+</article>
+
+  <%= button_to "See Sales", {controller: 'vendors', action: 'show_sales'}, method: :get %>
 
 </section>

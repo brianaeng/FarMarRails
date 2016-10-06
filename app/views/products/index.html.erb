@@ -3,7 +3,7 @@
   <ul>
     <% @products.each do |product| %>
       <h4><%= product.id %></h4>
-      <li><%= product.name %></li>
+      <li><%= link_to product.name, {controller: 'products', action: 'show', id: product.id} %></li>
       <li><%= product.vendor_id %></li>
     <% end %>
   </ul>

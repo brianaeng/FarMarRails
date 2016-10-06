@@ -9,6 +9,14 @@ class VendorsController < ApplicationController
 
   def show
     find
+
+    @product = Product.new
+  end
+
+  def show_sales
+    find
+
+    @sale = Sale.new
   end
 
   def new
@@ -22,8 +30,9 @@ class VendorsController < ApplicationController
     @vendor.description = params[:vendor][:description]
     @vendor.num_of_employees = params[:vendor][:num_of_employees]
     @vendor.market_id = params[:vendor][:market_id]
-
     @vendor.save
+
+    redirect_to action: 'show', id: @vendor.id
   end
 
   def edit
@@ -39,12 +48,16 @@ class VendorsController < ApplicationController
     @vendor.market_id = params[:vendor][:market_id]
 
     @vendor.save
+
+    redirect_to action: 'show', id: @vendor.id
   end
 
   def destroy
     find
 
     @vendor.destroy
+
+    redirect_to controller: 'markets', action: 'show', id: @vendor.market.id
   end
 
   private
