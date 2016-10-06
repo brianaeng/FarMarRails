@@ -1,6 +1,10 @@
 class VendorsController < ApplicationController
   def index
     @vendors = Vendor.all
+
+    @search_vendor = Vendor.search(params[:q])
+    @vendors = @search_vendor.result
+    @search_vendor.build_condition
   end
 
   def show
