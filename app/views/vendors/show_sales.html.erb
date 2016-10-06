@@ -7,7 +7,27 @@
       <li><%= sale.purchase_time %></li>
       <li><%= sale.vendor_id %></li>
       <li><%= sale.product_id %></li>
+      <%= button_to "Delete", {controller: 'sales', action: 'destroy', id: sale.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class:"submit" %>
     <% end %>
   </ul>
-  <%= link_to 'Add Sale', {controller: 'sales', action: 'new'} %>
+  <%# link_to 'Add Sale', {controller: 'sales', action: 'new'} %>
+</article>
+
+<article>
+  <%= form_for @sale, url: {controller: 'sales', action: 'create'}, method: :post do |f| %>
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+
+    <%= f.label :purchase_time %>
+    <%= f.datetime_local_field :purchase_time %>
+
+    <%= f.label :vendor_id %>
+    <%= f.number_field :vendor_id, value: @vendor.id %>
+
+    <%= f.label :product_id %>
+    <%= f.number_field :product_id %>
+
+    <%= f.submit %>
+
+  <% end %>
 </article>

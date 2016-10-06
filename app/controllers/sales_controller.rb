@@ -15,13 +15,13 @@ class SalesController < ApplicationController
     @sale = Sale.new
 
     @sale.amount = params[:sale][:amount]
-    @sale.purchase_time = params[:sale][:purchase_time] 
+    @sale.purchase_time = params[:sale][:purchase_time]
     @sale.vendor_id = params[:sale][:vendor_id]
     @sale.product_id = params[:sale][:product_id]
 
     @sale.save
 
-    redirect_to sales_url
+    redirect_to controller: 'vendors', action: 'show_sales', id: @sale.vendor.id
   end
 
   def edit
@@ -37,13 +37,15 @@ class SalesController < ApplicationController
     @sale.product_id = params[:sale][:product_id]
     @sale.save
 
-    redirect_to sales_url
+    redirect_to controller: 'vendors', action: 'show_sales', id: @sale.vendor.id
   end
 
   def destroy
     find
 
     @sale.destroy
+    
+    redirect_to controller: 'vendors', action: 'show_sales', id: @sale.vendor.id
   end
 
   private

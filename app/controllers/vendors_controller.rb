@@ -9,10 +9,14 @@ class VendorsController < ApplicationController
 
   def show
     find
+
+    @product = Product.new
   end
 
   def show_sales
     find
+
+    @sale = Sale.new
   end
 
   def new
