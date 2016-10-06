@@ -37,6 +37,7 @@ nav {
   opacity: .8;
   position: fixed;
   width: 100vw;
+  z-index: 1;
 }
 
 nav p {
@@ -93,10 +94,12 @@ div.search {
 }
 
 div.no-selector {
+  z-index: 0;
   margin: 45vh 25vw;
 }
 
 div.search-high {
+  z-index: 0;
   position: relative;
   margin: 0vw auto 5vw;
   background-color: #fafafa;
@@ -176,6 +179,14 @@ div.search input.search-button {
   width: 7vw;
 }
 
+div.search input.vendor{
+  background-color: #61964f;
+}
+
+div.search input.market {
+  background-color: #423d61;
+}
+
 ::-webkit-input-placeholder {
   color: #585858;
   font-weight: 300;
@@ -236,7 +247,7 @@ article.entity-display img.vendor {
 }
 
 article.entity-display img.market {
-  background-color: #71416a;
+  background-color: #423d61;
 }
 
 article.entity-display ul {
