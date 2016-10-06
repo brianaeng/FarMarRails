@@ -1,12 +1,15 @@
-<h1>Vendors#index</h1>
-<article>
-  <ul>
+<section class="body">
+
     <% @vendors.each do |vendor| %>
-      <h4><%= vendor.id %></h4>
-      <li><%= link_to vendor.name, {controller: 'vendors', action: 'show', id: vendor.id}, method: :get %></li>
-      <li><%= vendor.description %></li>
-      <li><%= vendor.num_of_employees %></li>
-      <li><%= vendor.market_id %></li>
+      <article class="entity-display">
+        <img src="../assets/Vendor-logo-white.png" alt="vendor placeholder logo" class="vendor"/>
+        <ul>
+          <h3><%= vendor.name %></h3>
+          <h4>at <%= link_to vendor.market.name, {controller: 'markets', action: 'show', id: vendor.market_id}, method: :get %></h4>
+          <p>Description: <%= vendor.description %></p>
+        </ul>
+      </article>
+      <div class="list-break"></div>
     <% end %>
-  </ul>
-</article>
+
+</section>

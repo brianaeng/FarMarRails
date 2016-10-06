@@ -1,24 +1,27 @@
-<h1>Markets#show</h1>
-<article>
-  <ul>
-    <li><%= @market.name %></li>
-    <li><%= @market.address %></li>
-    <li><%= @market.city %></li>
-    <li><%= @market.county %></li>
-    <li><%= @market.state %></li>
-    <li><%= @market.zip %></li>
-  </ul>
-</article>
+<section class="body">
 
-<article>
-  <!-- need to someway set market_id to default with current market? -->
-  <%= button_to "Add Vendor", {controller: 'vendors', action: 'new'}, method: :get %>
-  <ul>
-    <% @market.vendors.each do |vendor| %>
-      <li>
-        <%= link_to vendor.name, {controller: 'vendors', action: 'show', id: vendor.id}, method: :get %>
-        <%= button_to "Edit", {controller: 'vendors', action: 'edit', id: vendor.id}, method: :get %>
-      </li>
-    <% end %>
-  </ul>
-</article>
+  <article class="entity-display">
+    <img src="../assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
+    <ul class="address-block">
+      <h3><%= @market.name %></li></h3>
+      <li><%= @market.address %></li>
+      <li><%= "#{@market.city}, #{@market.state} #{@market.zip}" %></li>
+    </ul>
+    <%= button_to "Edit Profile", {controller: 'markets', action: 'edit', id: @market.id }, method: :get %>
+  </article>
+
+
+  <article>
+    <!-- need to someway set market_id to default with current market? -->
+    <%= button_to "Add Vendor", {controller: 'vendors', action: 'new'}, method: :get %>
+    <ul>
+      <% @market.vendors.each do |vendor| %>
+        <li>
+          <%= link_to vendor.name, {controller: 'vendors', action: 'show', id: vendor.id}, method: :get %>
+          <%= button_to "Edit", {controller: 'vendors', action: 'edit', id: vendor.id}, method: :get %>
+        </li>
+      <% end %>
+    </ul>
+  </article>
+
+</section>

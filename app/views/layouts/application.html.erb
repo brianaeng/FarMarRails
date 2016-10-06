@@ -2,16 +2,16 @@
 <html>
 <head>
   <title>Farmers Markets</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400|News+Cycle|Playfair+Display" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Josefin+Sans|Playfair+Display" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <nav>
-  <p> <%= link_to_unless_current('Farmers Markets', 'home') %> </p>
+  <p><a href="/">Farmers Market</a></p>
   <ul>
-    <li><%= link_to('Admin', 'admin') %></li><li><%= link_to('Market', 'market') %></li><li><%= link_to('Vendor', 'vendor') %></li>
+    <li><a href='/admin'>Admin</a></li><li><a href="/market">Market</a></li><li><a href='/vendor'>Vendor</a></li>
   </ul>
 </nav>
 
