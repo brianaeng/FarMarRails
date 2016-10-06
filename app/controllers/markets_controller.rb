@@ -1,6 +1,10 @@
 class MarketsController < ApplicationController
   def index
     @markets = Market.all
+
+    @search = Market.ransack(params[:q])
+    @markets = @search.result
+    @search.build_condition
   end
 
   def show

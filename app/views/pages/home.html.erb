@@ -1,6 +1,7 @@
-<%= form_tag '/search', method: :get do %>
-  <%= text_field_tag :search, params[:search], placeholder: 'Search for Markets' %>
-  <%= submit_tag "search", class: "submit" %>
+<%= search_form_for @search do |f| %>
+
+ <%= f.search_field :name_cont %>
+
 <% end %>
 
 <img src="assets/food-board.jpg" alt="Salmon meal on wooden platter" class="banner-image"/>
