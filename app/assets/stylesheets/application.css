@@ -96,26 +96,26 @@ div.search form {
   border: transparent;
 }
 
-div.search input {
+div.search input#q_name_cont {
   display: inline-block;
-  height: 1.75vw;
   font: normal normal 1.5vw/1 'Lato', sans-serif;
-  padding: 1.25vw;
+  margin: 1.125vw;
   width: 38vw;
 }
 
 div.search input.search-button {
-  float: right;
-  text-align: center;
-  width: 7vw;
   background-color: #da392a;
-  color: white;
-  opacity: 1;
+  border: 1px solid transparent;
   border-radius: .4vw;
-  padding: .5vw;
+  color: white;
+  float: right;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
   height: 3.25vw;
   margin: .5vw;
-  border: transparent;
+  opacity: 1;
+  padding: .5vw;
+  text-align: center;
+  width: 7vw;
 }
 
 ::-webkit-input-placeholder {
