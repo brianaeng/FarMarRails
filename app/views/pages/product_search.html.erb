@@ -1,6 +1,26 @@
-<%= search_form_for @search_product do |f| %>
+<!-- PRODUCT SEARCH PAGE SEARCH DEFAULTS TO PRODUCT -->
 
-  <%= f.search_field :name_cont %>
-  <%= f.submit %>
+<div class="search">
+  <ul class="search-selector">
+    <li><a href="/market_search">markets</a></li><li><a href="/vendor_search">vendors</a></li><li class="current"><a href="/product_search">products</a></li>
+  </ul>
 
-<% end %>
+  <%= search_form_for @search_product do |f| %>
+    <%= f.search_field :name_cont, placeholder: "Search Products"%>
+    <%= f.submit "search", class:"search-button" %>
+  <% end %>
+</div>
+
+<div class="see-all">
+  <h5>— OR —</h5>
+  <h5>See All</h5>
+  <ul>
+    <li>
+      <a href="/markets">M</a>
+      <a href="/vendors">V</a>
+      <a href="/products">P</a>
+    </li>
+  </ul>
+</div>
+
+<img src="assets/food-board.jpg" alt="Salmon meal on wooden platter" class="banner-image"/>

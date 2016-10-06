@@ -1,15 +1,22 @@
 <section class="body">
 
-    <% @markets.each do |market| %>
-      <article class="entity-display">
-        <img src="../assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
-        <ul class="address-block">
-          <h3><%= link_to market.name, {action: 'show', id: market}, method: :get %></li></h3>
-          <li><%= market.address %></li>
-          <li><%= "#{market.city}, #{market.state} #{market.zip}" %></li>
-        </ul>
-      </article>
-      <div class="list-break"></div>
+  <div class="search search-high">
+    <%= search_form_for @search_market do |f| %>
+      <%= f.search_field :name_or_address_or_city_or_state_cont, placeholder: "Search Markets"%>
+      <%= f.submit "search", class:"search-button" %>
     <% end %>
+  </div>
+
+  <% @markets.each do |market| %>
+    <article class="entity-display">
+      <img src="../assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
+      <ul class="address-block">
+        <h3><%= link_to market.name, {action: 'show', id: market}, method: :get %></li></h3>
+        <li><%= market.address %></li>
+        <li><%= "#{market.city}, #{market.state} #{market.zip}" %></li>
+      </ul>
+    </article>
+    <div class="list-break"></div>
+  <% end %>
 
 </section>

@@ -86,36 +86,94 @@ img.banner-image {
   width: 100vw;
 }
 
-div.search form {
-  background: rgba(255,255,255,0.7);
-  border: solid #d8d8d8 1px;
+div.search {
   position: fixed;
   width: 50vw;
-  height: 4.25vw;
+  margin: 36vh 25vw;
+}
+
+div.no-selector {
   margin: 45vh 25vw;
+}
+
+div.search-high {
+  position: relative;
+  margin: 0vw auto 5vw;
+  background-color: #fafafa;
+  border: solid #d8d8d8 1px;
+}
+
+div.search form {
+  background: rgba(255,255,255,0.7);
+  height: 4.25vw;
   border: transparent;
 }
 
 div.search input {
   display: inline-block;
-  height: 1.75vw;
   font: normal normal 1.5vw/1 'Lato', sans-serif;
-  padding: 1.25vw;
+  margin: 1.125vw;
   width: 38vw;
 }
 
-div.search input.search-button {
-  float: right;
+div.search ul.search-selector li {
+  display: inline-block;
+  margin: 0 .7vw 2vw 0;
+}
+
+div.search input.search-button,
+div.search ul.search-selector li a {
+  border: 1px solid transparent;
+  color: white;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
   text-align: center;
-  width: 7vw;
-  background-color: #da392a;
+}
+
+div.search ul.search-selector li a {
+  background: rgba(255, 255, 255, .7);
+  border: solid #d8d8d8 1px;
+  padding: .75vw 1.75vw 1vw 1.75vw;
+}
+
+div.search ul.search-selector li a:link,
+div.search ul.search-selector li a:visited {
+  color: #000;
+}
+
+
+
+div.search ul.search-selector li a:hover,
+div.search ul.search-selector li.current a:hover {
+  background: #80b36e;
+  border: 1px solid transparent;
+}
+
+div.search ul.search-selector li.current a {
+  background-color: #61964f;
+  border: 1px solid transparent;
   color: white;
   opacity: 1;
+}
+
+div.search ul.search-selector li.current a:link,
+div.search ul.search-selector li.current a:visited {
+  color: #FFF;
+}
+
+div.search ul.search-selector li a:hover {
+  color: #FFF;
+}
+
+div.search input.search-button {
+  background-color: #da392a;
   border-radius: .4vw;
-  padding: .5vw;
+  float: right;
   height: 3.25vw;
   margin: .5vw;
-  border: transparent;
+  text-align: center;
+  opacity: 1;
+  padding: .5vw;
+  width: 7vw;
 }
 
 ::-webkit-input-placeholder {
@@ -181,7 +239,6 @@ article.entity-display img.market {
   background-color: #71416a;
 }
 
-
 article.entity-display ul {
   vertical-align: top;
   display: inline-block;
@@ -192,11 +249,6 @@ article.entity-display ul,
 article.entity-display ul.address-block {
   width: 40vw;
 }
-/*
-article.entity-display ul li:nth-of-type(2n) {
-  font: normal 300 1vw/3 'Lato', sans-serif;
-  text-transform: uppercase;
-}*/
 
 h4 {
   font: normal 300 1vw/1 'Lato', sans-serif;
