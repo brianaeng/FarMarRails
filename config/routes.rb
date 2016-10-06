@@ -2,13 +2,13 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  get 'pages/home', to: 'pages#home', as: 'home'
+  get '/home', to: 'pages#home', as: 'home'
 
-  get 'pages/admin', to: 'pages#admin', as: 'admin'
+  get '/admin', to: 'pages#admin', as: 'admin'
 
-  get 'pages/vendor', to: 'pages#vendor', as: 'vendor'
+  get '/vendor', to: 'pages#vendor', as: 'vendor'
 
-  get 'pages/market', to: 'pages#market', as: 'market'
+  get '/market', to: 'pages#market', as: 'market'
 
   resources :markets, :vendors, :products, :sales
 
