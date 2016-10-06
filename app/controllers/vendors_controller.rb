@@ -11,6 +11,10 @@ class VendorsController < ApplicationController
     find
   end
 
+  def show_sales
+    find
+  end
+
   def new
     @vendor = Vendor.new
   end

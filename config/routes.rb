@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get '/market', to: 'pages#market', as: 'market'
 
+  get 'vendors/:id/show_sales', to: 'vendors#show_sales', as: 'show_sales'
+
   resources :markets, :vendors, :products, :sales
 
   # The priority is based upon order of creation: first created -> highest priority.
