@@ -93,6 +93,7 @@ form {
   width: 50vw;
   height: 4.25vw;
   margin: 45vh 25vw;
+  border: transparent;
 }
 
 input {
@@ -107,13 +108,14 @@ input.submit {
   float: right;
   text-align: center;
   width: 7vw;
-  background-color: #e3685c;
+  background-color: #da392a;
   color: white;
   opacity: 1;
   border-radius: .4vw;
   padding: .5vw;
   height: 3.25vw;
   margin: .5vw;
+  border: transparent;
 }
 
 ::-webkit-input-placeholder {

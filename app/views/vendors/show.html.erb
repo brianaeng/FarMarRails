@@ -10,7 +10,7 @@
 
 <article>
   <!-- need to someway set vendor_id to default with current vendor? -->
-  <%= button_to "Add Product", {controller: 'products', action: 'new'}, method: :get %>
+  <%= button_to "Add Product", {controller: 'products', action: 'new', id: @vendor.id}, method: :get %>
   <ul>
     <% @vendor.products.each do |product| %>
       <li>
