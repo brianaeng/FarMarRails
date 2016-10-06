@@ -7,6 +7,10 @@ class VendorsController < ApplicationController
     @search_vendor.build_condition
   end
 
+  def all
+    @vendors = Vendor.all
+  end
+
   def show
     find
 

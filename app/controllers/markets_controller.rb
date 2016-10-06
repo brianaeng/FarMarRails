@@ -5,8 +5,12 @@ class MarketsController < ApplicationController
     @markets = Market.all
 
     @search_market = Market.search(params[:q])
-    @markets = @search_market.result
+    @markets_found = @search_market.result
     @search_market.build_condition
+  end
+
+  def all
+    @markets = Market.all
   end
 
   def show

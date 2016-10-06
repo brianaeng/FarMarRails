@@ -1,0 +1,13 @@
+<section class="body">
+<% @markets.each do |market| %>
+  <article class="entity-display">
+    <img src="../assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
+    <ul class="address-block">
+      <h3><%= link_to market.name, {action: 'show', id: market}, method: :get %></li></h3>
+      <li><%= market.address %></li>
+      <li><%= "#{market.city}, #{market.state} #{market.zip}" %></li>
+    </ul>
+  </article>
+  <div class="list-break"></div>
+<% end %>
+</section>
