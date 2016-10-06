@@ -12,8 +12,7 @@
 
 
   <article>
-    <!-- need to someway set market_id to default with current market? -->
-    <%= button_to "Add Vendor", {controller: 'vendors', action: 'new'}, method: :get %>
+    <%# button_to "Add Vendor", {controller: 'vendors', action: 'new'}, method: :get %>
     <ul>
       <% @market.vendors.each do |vendor| %>
         <li>
