@@ -34,10 +34,29 @@ class VendorsController < ApplicationController
     find
 
     @sale = Sale.new
+
+    total_sales
   end
 
   def guest_show_sales
     find
+
+    total_sales
+  end
+
+  def total_sales
+    find
+
+    @all_sales = @vendor.sales
+
+    @cents = 0
+
+    @all_sales.each do |sale|
+      @cents += sale.amount
+    end
+
+    @total = "$#{'%.2f' % (@cents.to_i/100.0)}"
+
   end
 
   def new
