@@ -2,14 +2,14 @@
 <section class="body">
 
 <div class="search">
-  <%= search_form_for @search_market do |f| %>
-    <%= f.search_field :name_cont, placeholder: "Search Markets"%>
-    <%= f.submit "search", class:"search-button" %>
+  <%= form_for :market, url: {controller: 'pages', action: 'market_login'}, method: :get do |f| %>
+    <%= f.text_field :id, placeholder: "Enter your market number"%>
+    <%= f.submit "login", class:"search-button market" %>
   <% end %>
 
-  <%= search_form_for @search_vendor do |f| %>
-    <%= f.search_field :name_cont, placeholder: "Search Vendor"%>
-    <%= f.submit "search", class:"search-button" %>
+  <%= form_for :vendor, url: {controller: 'pages', action: 'vendor_login'}, method: :get do |f| %>
+    <%= f.text_field :id, placeholder: "Enter your vendor number"%>
+    <%= f.submit "login", class:"search-button vendor" %>
   <% end %>
 </div>
 

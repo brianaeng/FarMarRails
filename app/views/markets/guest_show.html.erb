@@ -23,7 +23,7 @@
       <% @market.vendors.each do |vendor| %>
         <tr>
           <td>
-            <%= link_to vendor.name, {controller: 'vendors', action: 'show', id: vendor.id}, method: :get %>
+            <%= link_to vendor.name, {controller: 'vendors', action: 'guest_show', id: vendor.id}, method: :get %>
           </td>
           <td>
             <%= vendor.description %>
