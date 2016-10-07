@@ -235,10 +235,14 @@ h3 {
   text-transform: uppercase
 }
 
+article.entity-display {
+  position: relative;
+}
+
 article.entity-display img {
   border-radius: .5vw;
   display: inline-block;
-  height: auto;
+  height: 15vw;
   width: 15vw;
 }
 
@@ -304,5 +308,86 @@ div.list-break {
 th {
   font: normal normal 1.3vw/1.3vw 'Josefin Sans', sans-serif;
   letter-spacing: .15em;
+  padding: 0 0 2vw 0;
   text-transform: uppercase;
+}
+
+td {
+  font: normal 300 1vw/1vw 'Lato', sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.table17{
+  width: 19vw;
+}
+
+.table25 {
+  width: 25vw;
+}
+
+.table10{
+  width: 10vw;
+}
+
+.form17 {
+  width: 15vw;
+  margin: 0 2vw 0 0 ;
+}
+
+.form25 {
+  width: 20vw;
+  margin: 0 2vw 0 0 ;
+}
+
+.form10 {
+  width: 8vw;
+  margin: 0 2vw 0 0 ;
+}
+
+
+
+form.button_to,
+li.form-submit {
+  border: 1px solid #000;
+  display: inline-block;
+  height: 2vw;
+  padding: .75vw .75vw 0 ;
+  margin: 0 .25vw .5vw 0;
+}
+
+article.entity-display div.entity-buttons {
+  position: absolute;
+  top: 12.1vw;
+  left: 17vw;
+}
+
+form.button_to input,
+li.form-submit {
+  font: normal 400 .8vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+form.button_to input:hover,
+li.form-submit:hover {
+  color: #dadada;
+  font: normal 400 .8vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.in-page-input-form {
+  background-color: #fafafa;
+  border: solid #d8d8d8 1px;
+  display: inline-block;
+  height: 2.75vw;
+}
+
+li.hide {
+  border: none;
+}
+
+td.table-button form.button_to{
+  background-color: red;
 }
