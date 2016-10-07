@@ -1,10 +1,14 @@
 class VendorsController < ApplicationController
-  def index
-    @vendors = Vendor.all
+  before_filter :set_search
 
-    @search_vendor = Vendor.search(params[:q])
-    @vendors = @search_vendor.result
-    @search_vendor.build_condition
+  def index
+    if !params[:q].blank?
+      @results = Vendor.search(params[:q])
+    else
+      @results = Vendor.search({:id_eq => 0})
+    end
+
+    @vendors = @results.result
   end
 
   def all
