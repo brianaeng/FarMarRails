@@ -1,0 +1,39 @@
+<section class="body">
+
+  <article class="entity-display">
+    <img src="/assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
+    <ul class="address-block">
+      <h3><%= @market.name %></li></h3>
+      <li><%= @market.address %></li>
+      <li><%= "#{@market.city}, #{@market.state} #{@market.zip}" %></li>
+    </ul>
+    <div class="list-break"></div>
+  </article>
+
+
+  <article>
+    <table>
+      <tr>
+        <th>Vendors</th>
+        <th>Description</th>
+        <th>No. of Employees</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @market.vendors.each do |vendor| %>
+        <tr>
+          <td>
+            <%= link_to vendor.name, {controller: 'vendors', action: 'show', id: vendor.id}, method: :get %>
+          </td>
+          <td>
+            <%= vendor.description %>
+          </td>
+          <td>
+            <%= vendor.num_of_employees %>
+          </td>
+        </tr>
+      <% end %>
+
+    </table>
+
+</section>

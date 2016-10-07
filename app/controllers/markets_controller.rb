@@ -46,6 +46,10 @@ class MarketsController < ApplicationController
     @vendor = Vendor.new
   end
 
+  def guest_show
+    find
+  end
+
   def new
     @market = Market.new
   end
