@@ -26,10 +26,18 @@ class VendorsController < ApplicationController
     @product = Product.new
   end
 
+  def guest_show
+    find
+  end
+
   def show_sales
     find
 
     @sale = Sale.new
+  end
+
+  def guest_show_sales
+    find
   end
 
   def new
