@@ -1,4 +1,24 @@
+<section class="body">
+
 <h1>Vendor Sales</h1>
+<article>
+  <%= form_for @sale, url: {controller: 'sales', action: 'create'}, method: :post do |f| %>
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+
+    <%= f.label :purchase_time %>
+    <%= f.datetime_local_field :purchase_time %>
+
+    <%= f.label :vendor_id %>
+    <%= f.hidden_field :vendor_id, value: @vendor.id %>
+
+    <%= f.label :product_id %>
+    <%= f.number_field :product_id %>
+
+    <%= f.submit %>
+
+  <% end %>
+</article>
 <article>
   <ul>
     <% @vendor.sales.each do |sale| %>
@@ -15,23 +35,4 @@
   </p>
 </article>
 
-<%= button_to "Add test", {controller: 'sales', action: 'new'}, method: :get %>
-
-<article>
-  <%= form_for @sale, url: {controller: 'sales', action: 'create'}, method: :post do |f| %>
-    <%= f.label :amount %>
-    <%= f.number_field :amount %>
-
-    <%= f.label :purchase_time %>
-    <%= f.datetime_local_field :purchase_time %>
-
-    <%= f.label :vendor_id %>
-    <%= f.number_field :vendor_id, value: @vendor.id %>
-
-    <%= f.label :product_id %>
-    <%= f.number_field :product_id %>
-
-    <%= f.submit %>
-
-  <% end %>
-</article>
+</section>

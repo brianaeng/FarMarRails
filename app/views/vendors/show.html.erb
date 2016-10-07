@@ -1,7 +1,7 @@
 <section class="body">
 
   <article class="entity-display">
-    <img src="../assets/Vendor-logo-white.png" alt="vendor placeholder logo" class="vendor"/>
+    <img src="/assets/Vendor-logo-white.png" alt="vendor placeholder logo" class="vendor"/>
     <ul>
       <h3><%= @vendor.name %></h3>
       <h4>at <%= link_to @vendor.market.name, {controller: 'markets', action: 'guest_show', id: @vendor.market_id}, method: :get %></h4>
