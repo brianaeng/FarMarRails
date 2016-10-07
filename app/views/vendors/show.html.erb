@@ -4,7 +4,7 @@
     <img src="../assets/Vendor-logo-white.png" alt="vendor placeholder logo" class="vendor"/>
     <ul>
       <h3><%= @vendor.name %></h3>
-      <h4>at <%= link_to @vendor.market.name, {controller: 'markets', action: 'show', id: @vendor.market_id}, method: :get %></h4>
+      <h4>at <%= link_to @vendor.market.name, {controller: 'markets', action: 'guest_show', id: @vendor.market_id}, method: :get %></h4>
       <p>Description: <%= @vendor.description %></p>
       <div class = "entity-buttons">
         <%= button_to "Edit Profile", {controller: 'vendors', action: 'edit', id: @vendor.id }, method: :get%>
@@ -16,7 +16,6 @@
   </article>
 
   <article>
-    <%# button_to "Add Product", {controller: 'products', action: 'new', id: @vendor.id }, method: :get %>
     <table>
       <tr>
         <th class="table17">Products</th>

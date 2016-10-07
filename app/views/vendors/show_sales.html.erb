@@ -10,8 +10,12 @@
       <%= button_to "Delete", {controller: 'sales', action: 'destroy', id: sale.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class:"submit" %>
     <% end %>
   </ul>
-  <%# link_to 'Add Sale', {controller: 'sales', action: 'new'} %>
+  <p>
+    Total Sales Amount: <%= @total %>
+  </p>
 </article>
+
+<%= button_to "Add test", {controller: 'sales', action: 'new'}, method: :get %>
 
 <article>
   <%= form_for @sale, url: {controller: 'sales', action: 'create'}, method: :post do |f| %>

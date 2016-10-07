@@ -1,0 +1,15 @@
+<h1>Vendor Sales</h1>
+<article>
+  <ul>
+    <% @vendor.sales.each do |sale| %>
+      <h4><%= sale.id %></h4>
+      <li><%= sale.amount %></li>
+      <li><%= sale.purchase_time %></li>
+      <li><%= sale.vendor_id %></li>
+      <li><%= sale.product_id %></li>
+    <% end %>
+  </ul>
+  <p>
+    Total Sales Amount: <%= @total %>
+  </p>
+</article>
