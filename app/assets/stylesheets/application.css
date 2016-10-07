@@ -1,23 +1,6 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-/*font-family: 'Playfair Display', serif;
-font-family: 'Lato', sans-serif;
-font-family: 'News Cycle', sans-serif;*/
-
+/**********************************************/
+/********      GENERAL STYLING   **************/
+/**********************************************/
 
 a:link,
 a:visited {
@@ -29,9 +12,36 @@ a:hover {
   color: #333333;
 }
 
+section.body {
+  padding: 10vw 0 0 0;
+  margin: 0 20vw 0 20vw;
+}
+
+.list-break {
+  border-bottom: 1px solid #d8d8d8;
+  height: 3vw;
+  margin: 0 0 3vw 0;
+}
+
+::-webkit-input-placeholder {
+  color: #585858;
+  font-weight: 300;
+}
+
+.hide {
+  border: none;
+}
+
+
+
+
+/**********************************************/
+/**********       NAVIGATION     **************/
+/**********************************************/
+
 nav {
   background-color: #FFF;
-  border: transparent;
+  border: 1px solid transparent;
   border-bottom: solid #d8d8d8 1px;
   height: 5vw;
   opacity: .8;
@@ -54,10 +64,8 @@ nav p {
 
 nav ul {
   float: right;
-  /*height: 5vw;*/
   text-align: right;
   width: 77vw;
-  /*margin: 2vw 0;*/
 }
 
 nav ul li {
@@ -65,7 +73,6 @@ nav ul li {
   height: 1vw;
   text-align: center;
   padding: 2vw 0;
-  /*width: 10vw;*/
 }
 
 nav ul li a:hover {
@@ -83,9 +90,25 @@ nav ul li a {
   width: 10vw;
 }
 
+
+
+
+
+/**********************************************/
+/*******     FULL SCREEN IMAGES     ***********/
+/**********************************************/
+
 img.banner-image {
   width: 100vw;
 }
+
+
+
+
+
+/**********************************************/
+/**********       SEARCH FORMS      ***********/
+/**********************************************/
 
 div.search {
   position: fixed;
@@ -101,7 +124,7 @@ div.no-selector {
 div.search-high {
   z-index: 0;
   position: relative;
-  margin: 0vw auto 5vw;
+  margin: 0 auto 5vw;
   background-color: #fafafa;
   border: solid #d8d8d8 1px;
 }
@@ -109,7 +132,7 @@ div.search-high {
 div.search form {
   background: rgba(255,255,255,0.7);
   height: 4.25vw;
-  border: transparent;
+  border: 1px solid transparent;
 }
 
 div.search input {
@@ -142,8 +165,6 @@ div.search ul.search-selector li a:link,
 div.search ul.search-selector li a:visited {
   color: #000;
 }
-
-
 
 div.search ul.search-selector li a:hover,
 div.search ul.search-selector li.current a:hover {
@@ -179,6 +200,13 @@ div.search input.search-button {
   width: 7vw;
 }
 
+
+
+
+/**********************************************/
+/****** COLORIZATION OF LOGIN BUTTONS *********/
+/**********************************************/
+
 div.search input.vendor{
   background-color: #61964f;
 }
@@ -187,15 +215,15 @@ div.search input.market {
   background-color: #423d61;
 }
 
-::-webkit-input-placeholder {
-  color: #585858;
-  font-weight: 300;
-}
 
-section.body {
-  padding: 10vw 0 0 0;
-  margin: 0 20vw 0 20vw;
-}
+
+
+
+
+/**********************************************/
+/******          INDEX PAGES          *********/
+/**  INHERITS STYLING FROM ENTITY DISPLAYS  ***/
+/**********************************************/
 
 div.see-all {
   margin: 80vh 40vw;
@@ -203,14 +231,6 @@ div.see-all {
   text-align: center;
   width: 20vw;
 }
-
-div.see-all h5{
-  color: #FFF;
-  text-shadow: 2px 2px #404040;
-  font: normal 300 1.5vw/1 'Lato', sans-serif;
-  letter-spacing: .15em;
-}
-
 
 div.see-all ul {
   position: relative;
@@ -223,17 +243,50 @@ div.see-all ul li {
   opacity: .7;
   text-align: center;
   width: 3vw;
-
 }
 
 
 
-h3 {
+/**********************************************/
+/**********       HEADING TAGS      ***********/
+/**********************************************/
+
+/* H3 Heading is used for Vendor or Market name in entity displays, available for similar*/
+div.entity-text h3 {
   display: inline-block;
   font: normal normal 1.75vw/1.75vw 'Josefin Sans', sans-serif;
   letter-spacing: .15em;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
+
+/*H4 Heading is used for Vendor's Market text in entity displays, available for similar*/
+h4 {
+  font: normal 300 1vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+  padding: .5vw 0 0 0;
+  text-transform: uppercase;
+}
+
+h4 a:hover {
+  color: #dadada;
+}
+
+/*h5 Heading is used for Vendor descriptions*/
+h5{
+  color: #FFF;
+  text-shadow: 2px 2px #404040;
+  font: normal 300 1.5vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+}
+
+
+
+
+
+
+/**********************************************/
+/**********     ENTITY DISPLAYS     ***********/
+/**********************************************/
 
 article.entity-display {
   position: relative;
@@ -254,14 +307,10 @@ article.entity-display img.market {
   background-color: #423d61;
 }
 
-article.entity-display ul {
+article.entity-display div.entity-text {
   vertical-align: top;
   display: inline-block;
   padding: 0 0 0 2vw;
-}
-
-article.entity-display ul,
-article.entity-display ul.address-block {
   width: 40vw;
 }
 
@@ -271,26 +320,15 @@ article.entity-display p {
   letter-spacing: .15em;
 }
 
-h4 {
-  font: normal 300 1vw/1 'Lato', sans-serif;
-  letter-spacing: .15em;
-  padding: .5vw 0 0 0;
-  text-transform: uppercase;
-}
-
-h4 a:hover {
-  color: #dadada;
-}
-
-article.entity-display ul.address-block li:first-of-type {
-  margin: 3vw 0 0 0;
-}
-
 article.entity-display ul.address-block li {
   font: normal 300 1vw/1 'Lato', sans-serif;
   letter-spacing: .15em;
   padding: .5vw 0 0 0;
   text-transform: uppercase;
+}
+
+article.entity-display ul.address-block li:first-of-type {
+  margin: 3vw 0 0 0;
 }
 
 article.entity-display button {
@@ -299,24 +337,35 @@ article.entity-display button {
   height: 5vw;
 }
 
-div.list-break {
-  border-bottom: solid #d8d8d8 1px;
-  height: 3vw;
-  margin: 0 0 3vw 0;
-}
 
-th {
+
+
+
+/**********************************************/
+/**********         TABLES          ***********/
+/**********************************************/
+
+
+table th {
   font: normal normal 1.3vw/1.3vw 'Josefin Sans', sans-serif;
   letter-spacing: .15em;
   padding: 0 0 2vw 0;
   text-transform: uppercase;
 }
 
-td {
+table td {
   font: normal 300 1vw/1vw 'Lato', sans-serif;
   letter-spacing: .15em;
   text-transform: uppercase;
 }
+
+
+
+
+
+/**********************************************/
+/**********  TABLE AND FORM WIDTHS  ***********/
+/**********************************************/
 
 .table17{
   width: 19vw;
@@ -347,7 +396,13 @@ td {
 
 
 
-form.button_to,
+
+
+/**********************************************/
+/********** WHY???????????????????? ***********/
+/**********************************************/
+
+div.entity-buttons form.button_to,
 li.form-submit {
   border: 1px solid #000;
   display: inline-block;
@@ -384,10 +439,12 @@ li.form-submit:hover {
   height: 2.75vw;
 }
 
-li.hide {
+.hide {
   border: none;
 }
 
-td.table-button form.button_to{
-  background-color: red;
+td.table-button form.button_to {
+  text-align: center;
+  margin: 0 0 1vw 1vw;
+  width: 4.5vw;
 }
