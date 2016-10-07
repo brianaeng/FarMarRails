@@ -3,7 +3,7 @@
   <article class="entity-display">
     <img src="../assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
     <div class="entity-text">
-      <h3><%= @market.name %></li></h3>
+      <h3><%= @market.name %></h3>
         <ul class="address-block">
           <li><%= @market.address %></li>
           <li><%= "#{@market.city}, #{@market.state} #{@market.zip}" %></li>
@@ -12,7 +12,6 @@
           </div>
         </ul>
     </div>
-    <%#= button_to "Delete Profile", {controller: 'markets', action: 'destroy', id: @market.id }, method: :delete, data: {confirm: "Are you sure you want to delete this?"} %>
     <div class="list-break"></div>
   </article>
 
