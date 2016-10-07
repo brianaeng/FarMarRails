@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  get '/markets/:id/guest_show', to: 'markets#guest_show'
+  get '/markets/:id/show', to: 'markets#guest_show'
 
-  get '/vendors/:id/guest_show', to: 'vendors#guest_show'
+  get '/vendors/:id/show', to: 'vendors#guest_show'
 
   get '/markets/all', to: 'markets#all', as: 'markets_all'
 
@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   get '/market_login', to: 'pages#market_login'
 
+  get '/admin_market_login', to: 'pages#admin_market_login'
+
+  get '/admin_vendor_login', to: 'pages#admin_vendor_login'
+
   get '/home', to: 'pages#home', as: 'home'
 
   get '/admin', to: 'pages#admin', as: 'admin'
@@ -26,9 +30,7 @@ Rails.application.routes.draw do
 
   get '/market', to: 'pages#market', as: 'market'
 
-  get 'vendors/:id/show_sales', to: 'vendors#show_sales', as: 'show_sales'
-
-  get 'vendors/:id/guest_show_sales', to: 'vendors#guest_show_sales'
+  get 'vendors/:id/sales', to: 'vendors#show_sales', as: 'show_sales'
 
   resources :markets, :vendors, :products, :sales
 

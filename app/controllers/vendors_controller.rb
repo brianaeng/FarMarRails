@@ -38,12 +38,6 @@ class VendorsController < ApplicationController
     total_sales
   end
 
-  def guest_show_sales
-    find
-
-    total_sales
-  end
-
   def total_sales
     find
 
