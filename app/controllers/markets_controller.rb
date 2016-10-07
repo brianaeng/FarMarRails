@@ -9,14 +9,31 @@ class MarketsController < ApplicationController
     # else
     #   @markets = Market.all
     # end
-    if !params[:q].blank?
-      @results = Market.search(params[:q])
+
+    # if
+    #   if !params[:q].blank?
+    #     @results = Market.search(params[:q])
+    #   else
+    #     @results = Market.search({:id_eq => 0})
+    #   end
+    #   @markets = @results.result
+    # else
+    #   @markets = Market.all
+    # end
+
+    if params[:commit] == "search"
+      if !params[:q].blank?
+        @results = Market.search(params[:q])
+      else
+        @results = Market.search({:id_eq => 0})
+      end
+
+      @markets = @results.result
+
     else
-      @results = Market.search({:id_eq => 0})
+      @markets = Market.all
     end
 
-    @markets = @results.result
-    # @all = Market.all
   end
 
   def all

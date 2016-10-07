@@ -3,12 +3,10 @@
   <div class="search search-high">
     <%= search_form_for @search_market do |f| %>
       <%= f.search_field :name_or_address_or_city_or_state_cont, placeholder: "Search Markets"%>
-      <%# f.hidden_field :searching, value: true %>
       <%= f.submit "search", class:"search-button" %>
     <% end %>
   </div>
 
-<% if !@markets.empty? %>
   <% @markets.each do |market| %>
     <article class="entity-display">
       <img src="../assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
@@ -20,9 +18,5 @@
     </article>
     <div class="list-break"></div>
   <% end %>
-<% else %>
-  No search results found.
-<% end %>
-
 
 </section>

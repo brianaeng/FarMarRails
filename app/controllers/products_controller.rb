@@ -2,16 +2,26 @@ class ProductsController < ApplicationController
   before_filter :set_search
 
   def index
-    # @products = Product.all
-    @products = Product.all
+    if params[:commit] == "search"
+      if !params[:q].blank?
+        @results = Product.search(params[:q])
+      else
+        @results = Product.search({:id_eq => 0})
+      end
 
-    if !params[:q].blank?
-      @results = Product.search(params[:q])
       @products = @results.result
-    elsif params[:q].blank?
-      @results = Product.search({:id_eq => 0})
-      @products = @results.result
+
+    else
+      @products = Product.all
     end
+
+    # if !params[:q].blank?
+    #   @results = Product.search(params[:q])
+    #   @products = @results.result
+    # elsif params[:q].blank?
+    #   @results = Product.search({:id_eq => 0})
+    #   @products = @results.result
+    # end
   end
 
   def show
