@@ -9,6 +9,10 @@ class SalesController < ApplicationController
 
   def new
     @sale = Sale.new
+
+    url = request.referrer
+    numbers = url.scan(/\d+/)
+    @id = numbers.last.to_i
   end
 
   def create
@@ -44,7 +48,7 @@ class SalesController < ApplicationController
     find
 
     @sale.destroy
-    
+
     redirect_to controller: 'vendors', action: 'show_sales', id: @sale.vendor.id
   end
 
