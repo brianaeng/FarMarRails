@@ -6,8 +6,12 @@
       <h3><%= @vendor.name %></h3>
       <h4>at <%= link_to @vendor.market.name, {controller: 'markets', action: 'show', id: @vendor.market_id}, method: :get %></h4>
       <p>Description: <%= @vendor.description %></p>
+      <div class = "entity-buttons">
+        <%= button_to "Edit Profile", {controller: 'vendors', action: 'edit', id: @vendor.id }, method: :get%>
+        <%= button_to "See Sales", {controller: 'vendors', action: 'show_sales'}, method: :get %>
+        <%= button_to "New Sale", {controller: 'sales', action: 'new'}, method: :get %>
+      </div>
     </ul>
-    <%= button_to "Edit Profile", {controller: 'vendors', action: 'edit', id: @vendor.id }, method: :get %>
     <div class="list-break"></div>
   </article>
 
@@ -15,38 +19,39 @@
     <%# button_to "Add Product", {controller: 'products', action: 'new', id: @vendor.id }, method: :get %>
     <table>
       <tr>
-        <th>Products</th>
+        <th class="table17">Products</th>
         <th></th>
         <th></th>
       </tr>
       <% @vendor.products.each do |product| %>
         <tr>
-          <td>
+          <td class="table17">
             <%= product.name %>
           </td>
-          <td>
-            <%= button_to "Edit", {controller: 'products', action: 'edit', id: product.id}, method: :get, class:"submit" %>
+          <td class="table-button edit">
+            <%= button_to "Edit", {controller: 'products', action: 'edit', id: product.id}, method: :get %>
           </td>
-          <td>
-            <%= button_to "Delete", {controller: 'products', action: 'destroy', id: product.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class:"submit" %>
+          <td class="table-button delete">
+            <%= button_to "Delete", {controller: 'products', action: 'destroy', id: product.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"} %>
           </td>
         </tr>
       <% end %>
     </table>
+
+    <ul class="in-page-input-form">
+      <%= form_for @product, url: {controller: 'products', action: 'create'}, method: :post do |f| %>
+        <li class="form17">
+          <%= f.text_field :name %>
+        </li>
+        <li class="hide">
+          <%= f.hidden_field :vendor_id, value: @vendor.id %>
+        </li>
+        <li class"form-submit">
+          <%= f.submit %>
+        </li>
+    </ul>
+    <% end %>
+
   </article>
-
-<article>
-  <%= form_for @product, url: {controller: 'products', action: 'create'}, method: :post do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :vendor_id %>
-    <%= f.number_field :vendor_id, value: @vendor.id %>
-
-    <%= f.submit %>
-  <% end %>
-</article>
-
-  <%= button_to "See Sales", {controller: 'vendors', action: 'show_sales'}, method: :get %>
 
 </section>
