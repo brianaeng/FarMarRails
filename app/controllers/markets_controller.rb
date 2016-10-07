@@ -1,12 +1,39 @@
 class MarketsController < ApplicationController
-  # before_filter :set_search
+  before_filter :set_search
 
   def index
-    @markets = Market.all
+    # if params[:q] == ""
+    #   @search_market = Market.search(params[:q])
+    #   @markets_found = @search_market.result
+    #   @search_market.build_condition
+    # else
+    #   @markets = Market.all
+    # end
 
-    @search_market = Market.search(params[:q])
-    @markets_found = @search_market.result
-    @search_market.build_condition
+    # if
+    #   if !params[:q].blank?
+    #     @results = Market.search(params[:q])
+    #   else
+    #     @results = Market.search({:id_eq => 0})
+    #   end
+    #   @markets = @results.result
+    # else
+    #   @markets = Market.all
+    # end
+
+    if params[:commit] == "search"
+      if !params[:q].blank?
+        @results = Market.search(params[:q])
+      else
+        @results = Market.search({:id_eq => 0})
+      end
+
+      @markets = @results.result
+
+    else
+      @markets = Market.all
+    end
+
   end
 
   def all
