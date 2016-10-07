@@ -8,19 +8,31 @@
       <p>Description: <%= @vendor.description %></p>
     </ul>
     <%= button_to "Edit Profile", {controller: 'vendors', action: 'edit', id: @vendor.id }, method: :get %>
+    <div class="list-break"></div>
   </article>
 
   <article>
     <%# button_to "Add Product", {controller: 'products', action: 'new', id: @vendor.id }, method: :get %>
-    <ul>
+    <table>
+      <tr>
+        <th>Products</th>
+        <th></th>
+        <th></th>
+      </tr>
       <% @vendor.products.each do |product| %>
-        <li>
-          <%= product.name %>
-          <%= button_to "Edit", {controller: 'products', action: 'edit', id: product.id}, method: :get, class:"submit" %>
-          <%= button_to "Delete", {controller: 'products', action: 'destroy', id: product.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class:"submit" %>
-        </li>
+        <tr>
+          <td>
+            <%= product.name %>
+          </td>
+          <td>
+            <%= button_to "Edit", {controller: 'products', action: 'edit', id: product.id}, method: :get, class:"submit" %>
+          </td>
+          <td>
+            <%= button_to "Delete", {controller: 'products', action: 'destroy', id: product.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class:"submit" %>
+          </td>
+        </tr>
       <% end %>
-    </ul>
+    </table>
   </article>
 
 <article>
