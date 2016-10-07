@@ -2,7 +2,7 @@
 
   <article class="entity-display">
     <img src="../assets/Vendor-logo-white.png" alt="vendor placeholder logo" class="vendor"/>
-    <ul>
+    <div class="entity-text">
       <h3><%= @vendor.name %></h3>
       <h4>at <%= link_to @vendor.market.name, {controller: 'markets', action: 'guest_show', id: @vendor.market_id}, method: :get %></h4>
       <p>Description: <%= @vendor.description %></p>
@@ -11,7 +11,7 @@
         <%= button_to "See Sales", {controller: 'vendors', action: 'show_sales'}, method: :get %>
         <%= button_to "New Sale", {controller: 'sales', action: 'new'}, method: :get %>
       </div>
-    </ul>
+    </div>
     <div class="list-break"></div>
   </article>
 
@@ -45,9 +45,9 @@
         <li class="hide">
           <%= f.hidden_field :vendor_id, value: @vendor.id %>
         </li>
-        <li class"form-submit">
+        <div class"entity-buttons">
           <%= f.submit %>
-        </li>
+        </div>
     </ul>
     <% end %>
 
