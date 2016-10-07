@@ -300,3 +300,9 @@ div.list-break {
   height: 3vw;
   margin: 0 0 3vw 0;
 }
+
+th {
+  font: normal normal 1.3vw/1.3vw 'Josefin Sans', sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
