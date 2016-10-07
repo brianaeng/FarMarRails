@@ -14,14 +14,6 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
-
-    # if !params[:q].blank?
-    #   @results = Product.search(params[:q])
-    #   @products = @results.result
-    # elsif params[:q].blank?
-    #   @results = Product.search({:id_eq => 0})
-    #   @products = @results.result
-    # end
   end
 
   def show
