@@ -538,7 +538,10 @@ section.stand-alone-form {
 }
 
 form#new_market.new_market input,
-section.stand-alone-form input {
+section.stand-alone-form input,
+section.stand-alone-form select,
+section.top-of-page-form input,
+section.top-of-page-form select {
   background-color: #FFF;
   border: solid #d8d8d8 1px;
   height: 4vw;
@@ -564,6 +567,7 @@ form#new_market.new_market input.search-button {
   height: 3.25vw;
   margin: 1vw;
   text-align: center;
+  text-transform: lowercase;
   opacity: 1;
   padding: .5vw;
   width: 15.125vw;
@@ -575,8 +579,14 @@ section.stand-alone-form li label {
   font: normal normal 1.5vw/1 'Lato', sans-serif;
   width: 8vw;
 }
+
 section.stand-alone-form input {
   width: 38vw;
+}
+
+section.stand-alone-form select {
+  border-radius: 0;
+  width: 39.25vw;
 }
 
 section.stand-alone-form input.search-button {
@@ -594,6 +604,34 @@ section.stand-alone-form.vendor input.search-button {
   background-color: #61964f;
 }
 
+section.top-of-page-form {
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  margin: 0 0 5vw 0;
+}
+
+section.top-of-page-form input {
+  width: 10vw;
+}
+
+section.top-of-page-form select {
+  width: 35vw;
+}
+
+section.top-of-page-form input.search-button {
+  background-color: #61964f;
+  border-radius: .4vw;
+  color: #FFF;
+  display: inline-block;
+  float: right;
+  height: 4vw;
+  padding: .5vw 1vw;
+  text-transform: lowercase;
+}
+
+section.top-of-page-form input,
+section.top-of-page-form select {
+  display: inline-block;
+}
 
 /**********************************************/
 /**********       WHYYYYYY???       ***********/

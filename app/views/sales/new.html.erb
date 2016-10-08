@@ -1,20 +1,23 @@
-<section class="body">
-<h1>Sales#new</h1>
-<%= form_for @sale do |f| %>
-  <%= f.label :amount %>
-  <%= f.number_field :amount %>
+<section class="stand-alone-form vendor">
+  <%= form_for @sale do |f| %>
+    <ul>
+      <li>
+        <%= f.label :amount %>
+        <%= f.number_field :amount, placeholder: "$00.00" %>
+      </li>
+      <li>
+        <%= f.label :product_id %>
+        <%= f.collection_select :product_id, Vendor.find(@id).products, :id, :name %>
+      </li>
+      <li>
+        <%= f.hidden_field :vendor_id, value: @id%>
+      </li>
+      <li>
+        <%= f.hidden_field :purchase_time, value: DateTime.now %>
+      </li>
+    </ul>
 
-  <%= f.label :purchase_time %>
-  <%= f.datetime_local_field :purchase_time %>
+    <%= f.submit class:"search-button"%>
 
-  <%= f.label :vendor_id %>
-  <%= f.hidden_field :vendor_id, value: @id %>
-
-  <%= f.label :product_id %>
-  <%= f.number_field :product_id %>
-
-  <%= f.submit %>
-
-<% end %>
-
+  <% end %>
 </section>

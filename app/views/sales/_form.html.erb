@@ -1,16 +1,25 @@
-<%= form_for @sale do |f| %>
-  <%= f.label :amount %>
-  <%= f.number_field :amount %>
+<section class="stand-alone-form">
+  <%= form_for @sale do |f| %>
+    <ul>
+      <li>
+        <%= f.label :amount %>
+        <%= f.number_field :amount, placeholder: "$00.00" %>
+      </li>
+      <li>
+        <%= f.label :purchase_time %>
+        <%= f.datetime_local_field :purchase_time %>
+      </li>
+      <li>
+        <%= f.label :vendor_id %>
+        <%= f.number_field :vendor_id %>
+      </li>
+      <li>
+        <%= f.label :product_id %>
+        <%= f.number_field :product_id %>
+      </li>
+    </ul>
 
-  <%= f.label :purchase_time %>
-  <%= f.datetime_local_field :purchase_time %>
+    <%= f.submit class:"search-button"%>
 
-  <%= f.label :vendor_id %>
-  <%= f.number_field :vendor_id %>
-
-  <%= f.label :product_id %>
-  <%= f.number_field :product_id %>
-
-  <%= f.submit %>
-
-<% end %>
+  <% end %>
+</section>

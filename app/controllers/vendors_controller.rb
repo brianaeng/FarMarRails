@@ -46,7 +46,9 @@ class VendorsController < ApplicationController
     @cents = 0
 
     @all_sales.each do |sale|
-      @cents += sale.amount
+      if !sale.amount.nil?
+        @cents += sale.amount
+      end
     end
 
     @total = "$#{'%.2f' % (@cents.to_i/100.0)}"
