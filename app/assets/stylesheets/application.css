@@ -28,8 +28,18 @@ section.body {
   font-weight: 300;
 }
 
+footer {
+  height: 10vw;
+}
 
+.space {
+  height: 2vw;
+}
 
+.sale-display {
+  margin: 0 12.5vw ;
+  width: 35vw;
+}
 
 
 /**********************************************/
@@ -299,6 +309,11 @@ div.entity-text h3 {
   text-transform: uppercase;
 }
 
+h3.large-dollar {
+  display: inline-block;
+  float: right;
+}
+
 /*H4 Heading is used for Vendor's Market text in entity displays, available for similar*/
 div.entity-text h4 {
   font: normal 300 1vw/1.5 'Lato', sans-serif;
@@ -483,7 +498,7 @@ article.entity-display div.entity-buttons {
 }
 
 .in-page-input-form {
-  margin: 2vw 0 15vw 0;
+  margin: 2vw 0 0 0;
   position: relative;
 }
 
@@ -610,10 +625,13 @@ section.top-of-page-form {
 }
 
 section.top-of-page-form input {
-  width: 10vw;
+  height: 4vw;
+  margin: 0 0 0 0;
+  width: 16.3vw;
 }
 
 section.top-of-page-form select {
+  margin: 0 0 1vw 0;
   width: 35vw;
 }
 
