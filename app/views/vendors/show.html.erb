@@ -50,7 +50,7 @@
     <ul class="in-page-input-form">
       <%= form_for @product, url: {controller: 'products', action: 'create'}, method: :post do |f| %>
         <li class="form48">
-          <%= f.text_field :name %>
+          <%= f.text_field :name, placeholder: "Product" %>
         </li>
         <li class="hide">
           <%= f.hidden_field :vendor_id, value: @vendor.id %>

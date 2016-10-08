@@ -491,7 +491,9 @@ article.entity-display div.entity-buttons {
   background-color: #fafafa;
   border: solid #d8d8d8 1px;
   display: inline-block;
-  height: 3vw;
+  font: normal normal 1vw/1 'Lato', sans-serif;
+  height: 2.2vw;
+  padding: .8vw 0 0 1vw;
   position: absolute;
   top: 0;
 }
@@ -529,20 +531,25 @@ textarea {
 }
 
 
-form#new_market.new_market {
+form#new_market.new_market,
+section.stand-alone-form {
   position: fixed;
   margin: 10vw 24.5vw;
 }
 
-form#new_market.new_market input {
+form#new_market.new_market input,
+section.stand-alone-form input {
   background-color: #FFF;
   border: solid #d8d8d8 1px;
   height: 4vw;
   margin: 0 .5vw 1vw .5vw;
-  opacity: .8;
   width: 15.125vw;
   font: normal normal 1.5vw/1 'Lato', sans-serif;
   padding: 0 0 0 1.125vw;
+}
+
+form#new_market.new_market input {
+  opacity: .8;
 }
 
 form#new_market.new_market input.name {
@@ -554,7 +561,6 @@ form#new_market.new_market input.search-button {
   border: 1px solid transparent;
   border-radius: .4vw;
   color: #FFF;
-  /*float: right;*/
   height: 3.25vw;
   margin: 1vw;
   text-align: center;
@@ -562,6 +568,32 @@ form#new_market.new_market input.search-button {
   padding: .5vw;
   width: 15.125vw;
 }
+
+
+section.stand-alone-form li label {
+  display: inline-block;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  width: 8vw;
+}
+section.stand-alone-form input {
+  width: 38vw;
+}
+
+section.stand-alone-form input.search-button {
+  border-radius: .4vw;
+  color: #FFF;
+  margin: 2vw 12.5vw 12vw;
+  width: 25vw;
+}
+
+section.stand-alone-form.market input.search-button {
+  background-color: #423d61;
+}
+
+section.stand-alone-form.vendor input.search-button {
+  background-color: #61964f;
+}
+
 
 /**********************************************/
 /**********       WHYYYYYY???       ***********/
@@ -594,6 +626,8 @@ input#vendor_num_of_employees {
 }
 
 li.hide {
-  border: none;
+  background-color: transparent;
+  border: transparent;
   margin: none;
+  padding: none;
 }

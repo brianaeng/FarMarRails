@@ -1,15 +1,24 @@
-<%= form_for @vendor do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<section class="stand-alone-form vendor">
+  <%= form_for @vendor do |f| %>
+    <ul>
+      <li>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </li>
+      <li>
+        <%= f.label :staff %>
+        <%= f.text_field :num_of_employees %>
+      </li>
+      <li>
+        <%= f.label :market_id %>
+        <%= f.text_field :market_id %>
+      </li>
+    </ul>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-
-  <%= f.label :num_of_employees %>
-  <%= f.number_field :num_of_employees %>
-
-  <%= f.label :market_id %>
-  <%= f.number_field :market_id %>
-
-  <%= f.submit %>
-<% end %>
+    <%= f.submit class:"search-button" %>
+  <% end %>
+</section>
