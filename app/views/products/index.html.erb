@@ -11,13 +11,17 @@
     <ul>
     <% if !@products.empty? %>
       <% @products.each do |product| %>
-        <h3><%= product.name %></h3>
-        <h4>sold by <%= link_to product.vendor.name, {controller: 'vendors', action: 'guest_show', id: product.vendor.id} %></h4>
-        <h4>at <%= link_to product.vendor.market.name, {controller: 'markets', action: 'guest_show', id: product.vendor.market.id}%></h4>
+        <div class="entity-text">
+          <h3><%= product.name %></h3>
+          <h4>sold by <%= link_to product.vendor.name, {controller: 'vendors', action: 'guest_show', id: product.vendor.id} %></h4>
+          <h4>at <%= link_to product.vendor.market.name, {controller: 'markets', action: 'guest_show', id: product.vendor.market.id}%></h4>
+        </div>
         <div class="list-break"></div>
       <% end %>
     <% else %>
-      No search results found.
+      <p class="error-message">
+        Sorry! We didn't find any products with that search term.
+      </p>
     <% end %>
     </ul>
 

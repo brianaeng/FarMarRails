@@ -22,12 +22,18 @@
 <article>
   <ul>
     <% @vendor.sales.each do |sale| %>
-      <h4><%= sale.id %></h4>
-      <li><%= sale.amount %></li>
-      <li><%= sale.purchase_time %></li>
-      <li><%= sale.vendor_id %></li>
-      <li><%= sale.product_id %></li>
-      <%= button_to "Delete", {controller: 'sales', action: 'destroy', id: sale.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class:"submit" %>
+      <div class="entity-text">
+        <h3>Transaction ID: <%= sale.id %></h3>
+        <h4><%= sale.amount %></h4>
+        <li><%= sale.purchase_time %></li>
+        <li><%= sale.product_id %></li>
+        <li><%= sale.product.name %></li>
+        <div class="entity-buttons">
+          <%= button_to "Delete", {controller: 'sales', action: 'destroy', id: sale.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class:"submit" %>
+        </div>
+      </div>
+      <div class="list-break"></div>
+
     <% end %>
   </ul>
   <p>

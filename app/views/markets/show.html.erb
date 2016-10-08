@@ -37,11 +37,11 @@
           <td class="table10">
             <%= vendor.num_of_employees %>
           </td>
-          <td class="table-button edit">
-            <%= button_to "Edit", {controller: 'vendors', action: 'edit', id: vendor.id}, method: :get %>
+          <td class="table-button market edit">
+            <%= button_to "edit", {controller: 'vendors', action: 'edit', id: vendor.id}, method: :get %>
           </td>
-          <td class="table-button delete">
-            <%= button_to "Delete", {controller: 'vendors', action: 'destroy', id: vendor.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}%>
+          <td class="table-button market delete">
+            <%= button_to "delete", {controller: 'vendors', action: 'destroy', id: vendor.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}%>
           </td>
         </tr>
       <% end %>
@@ -62,8 +62,8 @@
           <li class="hide">
             <%= f.hidden_field :market_id, value: @market.id %>
           </li>
-          <div class = "entity-buttons">
-            <%= f.submit value:"Add Vendor" %>
+          <div class="entity-buttons">
+              <%= f.submit value:"Add Vendor" %>
           </div>
         <% end %>
       </ul>

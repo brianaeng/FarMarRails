@@ -9,9 +9,17 @@
       <h4>at <%= link_to @vendor.market.name, {controller: 'markets', action: 'guest_show', id: @vendor.market_id}, method: :get %></h4>
       <p>Description: <%= @vendor.description %></p>
       <div class = "entity-buttons">
-        <%= button_to "Edit Profile", {controller: 'vendors', action: 'edit', id: @vendor.id }, method: :get%>
-        <%= button_to "See Sales", {controller: 'vendors', action: 'show_sales'}, method: :get %>
-        <%= button_to "New Sale", {controller: 'sales', action: 'new'}, method: :get %>
+        <ul>
+          <li>
+            <%= button_to "Edit Profile", {controller: 'vendors', action: 'edit', id: @vendor.id }, method: :get%>
+          </li>
+          <li>
+            <%= button_to "See Sales", {controller: 'vendors', action: 'show_sales'}, method: :get %>
+          </li>
+          <li>
+            <%= button_to "New Sale", {controller: 'sales', action: 'new'}, method: :get %>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="list-break"></div>
@@ -20,7 +28,7 @@
   <article>
     <table>
       <tr>
-        <th class="table17">Products</th>
+        <th class="table48">Products</th>
         <th></th>
         <th></th>
       </tr>
@@ -29,10 +37,10 @@
           <td class="table17">
             <%= product.name %>
           </td>
-          <td class="table-button edit">
+          <td class="table-button vendor edit">
             <%= button_to "Edit", {controller: 'products', action: 'edit', id: product.id}, method: :get %>
           </td>
-          <td class="table-button delete">
+          <td class="table-button vendor delete">
             <%= button_to "Delete", {controller: 'products', action: 'destroy', id: product.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"} %>
           </td>
         </tr>
@@ -41,14 +49,14 @@
 
     <ul class="in-page-input-form">
       <%= form_for @product, url: {controller: 'products', action: 'create'}, method: :post do |f| %>
-        <li class="form17">
+        <li class="form48">
           <%= f.text_field :name %>
         </li>
         <li class="hide">
           <%= f.hidden_field :vendor_id, value: @vendor.id %>
         </li>
-        <div class"entity-buttons">
-          <%= f.submit %>
+        <div class="entity-buttons">
+          <%= f.submit value: "Add Product"%>
         </div>
     </ul>
     <% end %>
