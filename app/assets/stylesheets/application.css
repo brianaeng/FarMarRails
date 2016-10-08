@@ -122,6 +122,10 @@ div.no-selector {
   z-index: 0;
 }
 
+div.search-low {
+  margin: 55vh 25vw;
+}
+
 div.search-high {
   background-color: #fafafa;
   border: solid #d8d8d8 1px;
@@ -525,6 +529,39 @@ textarea {
 }
 
 
+form#new_market.new_market {
+  position: fixed;
+  margin: 10vw 24.5vw;
+}
+
+form#new_market.new_market input {
+  background-color: #FFF;
+  border: solid #d8d8d8 1px;
+  height: 4vw;
+  margin: 0 .5vw 1vw .5vw;
+  opacity: .8;
+  width: 15.125vw;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  padding: 0 0 0 1.125vw;
+}
+
+form#new_market.new_market input.name {
+  width: 50vw;
+}
+
+form#new_market.new_market input.search-button {
+  background-color: #da392a;
+  border: 1px solid transparent;
+  border-radius: .4vw;
+  color: #FFF;
+  /*float: right;*/
+  height: 3.25vw;
+  margin: 1vw;
+  text-align: center;
+  opacity: 1;
+  padding: .5vw;
+  width: 15.125vw;
+}
 
 /**********************************************/
 /**********       WHYYYYYY???       ***********/
