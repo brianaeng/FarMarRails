@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def admin
+    @market = Market.new
   end
 
   def market

@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get '/admin_vendor_login', to: 'pages#admin_vendor_login'
 
+  post '/admin', to: "markets#create"
+
   get 'vendors/:id/sales', to: 'vendors#show_sales', as: 'show_sales'
 
   resources :markets, :vendors, :products, :sales
