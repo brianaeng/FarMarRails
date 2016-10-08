@@ -2,25 +2,6 @@ class MarketsController < ApplicationController
   before_filter :set_search
 
   def index
-    # if params[:q] == ""
-    #   @search_market = Market.search(params[:q])
-    #   @markets_found = @search_market.result
-    #   @search_market.build_condition
-    # else
-    #   @markets = Market.all
-    # end
-
-    # if
-    #   if !params[:q].blank?
-    #     @results = Market.search(params[:q])
-    #   else
-    #     @results = Market.search({:id_eq => 0})
-    #   end
-    #   @markets = @results.result
-    # else
-    #   @markets = Market.all
-    # end
-
     if params[:commit] == "search"
       if !params[:q].blank?
         @results = Market.search(params[:q])
@@ -56,13 +37,14 @@ class MarketsController < ApplicationController
 
   def create
     @market = Market.new
-    #find way to only take params as argument?
+
     @market.name = params[:market][:name]
     @market.address = params[:market][:address]
     @market.city = params[:market][:city]
     @market.county = params[:market][:county]
     @market.state = params[:market][:state]
     @market.zip = params[:market][:zip]
+
     @market.save
 
     redirect_to action: 'show', id: @market.id

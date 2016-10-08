@@ -22,17 +22,17 @@ Rails.application.routes.draw do
 
   get '/admin_vendor_login', to: 'pages#admin_vendor_login'
 
-  get '/home', to: 'pages#home', as: 'home'
-
-  get '/admin', to: 'pages#admin', as: 'admin'
-
-  get '/vendor', to: 'pages#vendor', as: 'vendor'
-
-  get '/market', to: 'pages#market', as: 'market'
-
   get 'vendors/:id/sales', to: 'vendors#show_sales', as: 'show_sales'
 
   resources :markets, :vendors, :products, :sales
+
+  get '/home', to: 'pages#home'
+
+  get '/admin', to: 'pages#admin'
+
+  get '/vendor', to: 'pages#vendor'
+
+  get '/market', to: 'pages#market'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

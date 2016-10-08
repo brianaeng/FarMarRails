@@ -5,59 +5,52 @@ class PagesController < ApplicationController
   end
 
   def admin
-
-  end
-
-  def admin_market_login
-    if !Market.exists?(id: params[:market][:id].to_i)
-      redirect_to '/admin'
-    elsif params[:market][:id].to_i == 0
-      redirect_to '/admin'
-    else
-      @id = params[:market][:id].to_i
-      redirect_to controller: 'markets', action: 'show', id: @id
-    end
   end
 
   def market
     @id = 10
   end
 
-  def market_login
+  def default_market_login
     if !Market.exists?(id: params[:market][:id].to_i)
-      redirect_to '/market'
-    elsif params[:market][:id].to_i == 0
-      redirect_to '/market'
+      redirect_to @redirect
     else
       @id = params[:market][:id].to_i
       redirect_to controller: 'markets', action: 'show', id: @id
     end
   end
 
+  def admin_market_login
+    @redirect = '/admin'
+    default_market_login
+  end
+
+  def market_login
+    @redirect = '/market'
+    default_market_login
+  end
+
   def vendor
     @id = 10
   end
 
-  def vendor_login
+  def default_vendor_login
     if !Vendor.exists?(id: params[:vendor][:id].to_i)
-      redirect_to '/vendor'
-    elsif params[:vendor][:id].to_i == 0
-      redirect_to '/vendor'
+      redirect_to @redirect
     else
       @id = params[:vendor][:id].to_i
       redirect_to controller: 'vendors', action: 'show', id: @id
     end
   end
 
+  def vendor_login
+    @redirect = '/vendor'
+    default_vendor_login
+  end
+
   def admin_vendor_login
-    if !Vendor.exists?(id: params[:vendor][:id].to_i)
-      redirect_to '/admin'
-    elsif params[:vendor][:id].to_i == 0
-      redirect_to '/admin'
-    else
-      @id = params[:vendor][:id].to_i
-      redirect_to controller: 'vendors', action: 'show', id: @id
-    end
+    @redirect = '/admin'
+    default_vendor_login
   end
 
 end
